@@ -1,0 +1,56 @@
+.history-carousel-container {
+  position: relative;
+  @import "../../components/carousel-arrow-container/carousel-arrow-container";
+
+  .carousel-arrow-container {
+    &.right {
+      transform: translate(-50%, -50%);
+    }
+    &.left {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+}
+.history-carousel {
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  max-width: 100%;
+  padding-top: 3rem;
+
+  .carousel-content {
+    display: inline-flex;
+  }
+
+  .carousel-content .item:not(:last-child) {
+    margin-right: 2.8rem;
+  }
+  .carousel-content .item {
+    width: 400px;
+    @media (max-width: 500px) {
+      width: 350px;
+    }
+
+    .bg {
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem 1rem;
+    }
+  }
+  &::-webkit-scrollbar {
+    height: 0;
+  }
+  &-subtitle,
+  &-title {
+    color: white;
+    font-weight: 700;
+  }
+  &-subtitle {
+    font-size: 0.9rem;
+  }
+  &-title {
+    font-size: 2rem;
+  }
+}

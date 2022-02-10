@@ -1,0 +1,41 @@
+.parameters {
+  @include padding-container-x;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #f4f7fa;
+
+  &-title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  &-list {
+    columns: 3;
+    padding-left: 0;
+    list-style-type: none;
+    @media (max-width: 1200px) {
+      columns: 2;
+    }
+    @media (max-width: 992px) {
+      columns: 1;
+    }
+    li {
+      display: flex;
+      margin-bottom: 1rem;
+      @media (max-width: 400px) {
+        flex-direction: column;
+        span {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+  &-key,
+  &-value {
+    font-weight: 600;
+    width: 50%;
+  }
+  &-key {
+    color: $first;
+  }
+}

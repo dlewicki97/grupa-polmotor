@@ -1,0 +1,79 @@
+.button-wrapper {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+.button {
+  padding: 1.4rem 3.2rem;
+  border: unset;
+  outline: unset;
+  color: white;
+  background-color: #014288;
+  width: fit-content;
+  font-weight: 100;
+  font-size: 1rem;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  height: fit-content;
+  z-index: 1;
+  @mixin spanActive {
+    opacity: 1;
+    visibility: unset;
+    height: unset;
+    width: fit-content;
+  }
+  @mixin spanHidden {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+  }
+  span {
+    transition: opacity 0.2s;
+    display: block;
+
+    &.hover-text {
+      @include spanHidden;
+    }
+    &:not(.hover-text) {
+      @include spanActive;
+    }
+    &.visible {
+      @include spanActive;
+      transition: 0.2s transform;
+    }
+  }
+  &:hover {
+    color: white !important;
+    & + .shadow {
+      background-color: #87888c;
+      opacity: 0.4;
+    }
+    span {
+      &:not(.hover-text) {
+        @include spanHidden;
+      }
+      &.hover-text {
+        @include spanActive;
+      }
+      &.visible {
+        @include spanActive;
+        transform: translateY(3px);
+      }
+    }
+  }
+  & + .shadow {
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    top: 0;
+    transition: 0.2s background-color, 0.2s opacity;
+    left: 0;
+    transform: translate(-10px, 10px);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0;
+  }
+}

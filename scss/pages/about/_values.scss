@@ -1,0 +1,114 @@
+.values {
+  @include padding-container-x;
+  @include padding-container-y;
+  $parent: &;
+  &-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 5rem;
+  }
+  &-card-col {
+    width: 45%;
+    &:nth-child(2n) {
+      margin-top: 8rem;
+    }
+    @media (max-width: 768px), (min-width: 992px) and (max-width: 1200px) {
+      width: 100%;
+      margin-bottom: 5rem;
+      margin-top: 0rem !important;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &-card {
+    &:hover {
+      #{$parent}-card-button {
+        background-color: #f1f1f1;
+        img {
+          height: 35px;
+        }
+      }
+      #{$parent}-card-photo {
+        transform: scale(1.09);
+      }
+      .stripes {
+        height: 113%;
+      }
+    }
+    &-link {
+      display: block;
+      width: fit-content;
+    }
+    &-photo {
+      transition: 0.2s transform;
+      &-container {
+        height: 400px;
+        overflow: hidden;
+        @media (max-width: 400px) {
+          height: 200px;
+        }
+      }
+    }
+    &-content {
+      position: relative;
+      background-color: $first;
+      padding: 1.5rem 3rem;
+      overflow: hidden;
+      @media (max-width: 350px) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .stripes {
+        position: absolute;
+        transition: height 0.2s;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 141%;
+        background: repeating-linear-gradient(
+          0deg,
+          #013b7a,
+          #013b7a 2px,
+          #014288 2px,
+          #014288 32px
+        );
+        transform: rotate(45deg) translate(21%, -84%);
+      }
+    }
+    &-title {
+      color: white;
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      @media (max-width: 350px) {
+        font-size: 9vw;
+      }
+    }
+
+    &-button {
+      position: relative;
+      background-color: #fff;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      $radius: 75px;
+      width: $radius;
+      height: $radius;
+      transition: background-color 0.2s;
+      cursor: pointer;
+      &:hover {
+        img {
+          transform: rotate(360deg);
+        }
+      }
+      img {
+        transition: height 0.2s, transform 0.2s;
+        height: 30px;
+      }
+    }
+  }
+}

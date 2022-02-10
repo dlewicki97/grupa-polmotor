@@ -1,0 +1,80 @@
+.full-service {
+  @include padding-container-x;
+  @include padding-container-y;
+  padding-right: 0;
+  overflow: hidden;
+  .form-title-container {
+    transform: translateY(-15px);
+  }
+  .logo {
+    height: 30px;
+    width: auto;
+    margin-bottom: 0.8rem;
+  }
+  .form-title {
+    background-color: $first;
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 1.9rem;
+    width: fit-content;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  & > .row {
+    margin-top: 4rem;
+  }
+  .form-column {
+    padding-top: 2rem;
+  }
+  .title-section-description {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 5rem;
+    @media (max-width: 1200px) {
+      padding-top: 5rem;
+      width: 100%;
+    }
+  }
+
+  .gallery {
+    @media (min-width: 1300px) {
+      transform: translateX(6rem);
+    }
+  }
+
+  .photo-container {
+    position: relative;
+    $clipPathAngle: 13%;
+    $secondAngle: 100% - $clipPathAngle;
+    $photoHeight: 200px;
+    padding: 0.5rem;
+    @media (min-width: 992px) {
+      &:nth-child(-n + 2) {
+        transform: translateX($clipPathAngle);
+      }
+      &:nth-child(2) {
+        transform: translateX($clipPathAngle / 2);
+      }
+      &:last-child {
+        transform: translateX(-$clipPathAngle / 2);
+      }
+    }
+    .photo {
+      clip-path: polygon($clipPathAngle 0, 100% 0, $secondAngle 100%, 0% 100%);
+      height: $photoHeight;
+    }
+    .shadow {
+      clip-path: polygon($clipPathAngle 0, 100% 0, $secondAngle 100%, 0% 100%);
+      width: 100%;
+      height: $photoHeight;
+      transform: translate(-17px, 24px);
+    }
+    .photo-title {
+      color: $first;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+  }
+  @import "../../components/form/form";
+}

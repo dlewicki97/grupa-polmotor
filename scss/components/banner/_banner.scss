@@ -1,0 +1,36 @@
+@include bg;
+.banner {
+  &-bg {
+    background-position: center;
+    height: clamp(300px, 40vw, 600px);
+    position: relative;
+  }
+
+  &-lightgray {
+    @include padding-container-x;
+    background-color: #f4f7fa;
+    display: flex;
+    align-items: flex-end;
+    .title-section-title {
+      padding-top: 6rem;
+    }
+  }
+  &-title {
+    background-color: $first;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: fit-content;
+    color: white;
+    padding: 2rem 6rem;
+    font-size: clamp(1.5rem, 6vw, 3.5rem);
+    font-weight: 700;
+    transform: translateY(25%);
+    @media (max-width: 768px) {
+      width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+}

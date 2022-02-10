@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+
+    <title>Dostępne samochody</title>
+    <link
+        href="https://api.fontshare.com/css?f[]=general-sans@200,201,300,301,400,401,500,501,600,601,700,701,1,2&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="min-css/available_cars_layout.min.css">
+    <link rel="stylesheet" href="min-css/available_cars.min.css">
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="layout-nav">
+            <div class="logo-row">
+                <a class="logo-link" href="#">
+                    <img class="lazy logo" data-src="img/layout/logo.svg" alt="" width="180" height="auto">
+                </a>
+                <div id="collapse-button" class="layout-nav__hamburger-menu">
+                    <img data-src="img/layout/car.svg" alt="hamburger-menu" class="lazy hamburger-menu" width="25"
+                        height="25">
+                </div>
+            </div>
+            <div class="layout-nav__collapse">
+                <ul class="layout-nav__list">
+                    <li class="layout-nav__list-item">
+                        <a href="#" class="layout-nav__list-item-link"><img data-src="img/layout/nissan.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/kia.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/subaru.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/renault.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/dacia.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/isuzu.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/super-pewniak.svg"
+                                alt="" class="lazy"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="filters">
+            <form action="" class="form">
+                <div class="filters-radios">
+                    <label class="custom-radio">
+                        <input type="radio" name="radio">
+                        <div class="checkmark"></div>
+                        NOWE
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="radio">
+                        <div class="checkmark"></div>
+                        UŻYWANE
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="radio" checked>
+                        <div class="checkmark"></div>
+                        WSZYSTKIE
+                    </label>
+                </div>
+                <div class="filters-inputs">
+                    <div class="filters-inputs-col col-12 col-xl-6">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">KATEGORIA</label>
+                            <div class="custom-select">
+                                <select class="form-control">
+                                    <option disabled>wybierz</option>
+                                    <option value="osobowe"><span>osobowe</span></option>
+                                    <option value="transportowe"><span>transportowe</span></option>
+                                </select>
+                                <div class="arrow lazy" data-bg="img/layout/button-arrow.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">RODZAJ PALIWA</label>
+                            <div class="custom-select">
+                                <select class="form-control">
+                                    <option disabled>wybierz</option>
+                                    <option value="benzyna"><span>benzyna</span></option>
+                                    <option value="diesel"><span>diesel</span></option>
+                                </select>
+                                <div class="arrow lazy" data-bg="img/layout/button-arrow.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">MARKA</label>
+                            <div class="custom-select">
+                                <select class="form-control">
+                                    <option disabled selected>wybierz markę</option>
+                                    <option value="OPEL"><span>OPEL</span></option>
+                                    <option value="TOYOTA"><span>TOYOTA</span></option>
+                                </select>
+                                <div class="arrow lazy" data-bg="img/layout/button-arrow.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">MODEL</label>
+                            <div class="custom-select">
+                                <select class="form-control">
+                                    <option disabled selected>wybierz model</option>
+                                    <option value="ASTRA"><span>ASTRA</span></option>
+                                    <option value="CORSA"><span>CORSA</span></option>
+                                </select>
+                                <div class="arrow lazy" data-bg="img/layout/button-arrow.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filters-inputs-col col-12 col-xl-6">
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">PRZEBIEG OD</label>
+                            <input type="text" placeholder="km" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">PRZEBIEG DO</label>
+                            <input type="text" placeholder="km" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">ROCZNIK OD</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">ROCZNIK DO</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">LOKALIZACJA</label>
+                            <div class="custom-select">
+                                <select class="form-control">
+                                    <option disabled selected>wybierz</option>
+                                    <option value="LUBIN"><span>LUBIN</span></option>
+                                    <option value="LEGNICA"><span>LEGNICA</span></option>
+                                </select>
+                                <div class="arrow lazy" data-bg="img/layout/button-arrow.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">CENA OD</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">CENA DO</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <button class="button form-submit" type="submit">Wyszukaj</button>
+                    <div class="shadow"></div>
+                </div>
+            </form>
+
+        </section>
+
+        <section class="gray-bg" style="background-color: #f4f7fa;height: 120px;"></section>
+
+        <section class="offer">
+            <div class="title-section">
+                <h4 class="title-section-subtitle">POLECAMY Z NASZEJ OFERTY</h4>
+
+                <div class="row jcsb aic">
+                    <h2 class="title-section-title">Sprawdź co nowego jesienią</h2>
+                    <div class="carousel-arrows d-flex aic">
+                        <div data-direction="left" class="carousel-arrow-container">
+                            <img data-src="img/layout/carousel-arrow.svg" alt="" class="lazy carousel-arrow left">
+                        </div>
+                        <div data-direction="right" class="carousel-arrow-container">
+                            <img data-src="img/layout/carousel-arrow.svg" alt="" class="lazy carousel-arrow right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel">
+                <div class="carousel-content">
+
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel1.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Renault</span>
+                                        <span class="model">Arkana</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>AUTOMATYCZNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">75.000 zł</div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel2.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Dacia</span>
+                                        <span class="model">Duster</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>MANUALNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">225.000 zł</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel3.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Subaru</span>
+                                        <span class="model">Outback</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>MANUALNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">115.000 zł</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel4.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Nissan</span>
+                                        <span class="model">Leaf</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>MANUALNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">225.000 zł</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel5.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Kia</span>
+                                        <span class="model">Sportage</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>MANUALNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">95.000 zł</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel6.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Isuzu</span>
+                                        <span class="model">D-Max</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>MANUALNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">125.000 zł</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel1.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Renault</span>
+                                        <span class="model">Arkana</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>AUTOMATYCZNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">75.000 zł</div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel2.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Dacia</span>
+                                        <span class="model">Duster</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>MANUALNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">225.000 zł</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel3.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Subaru</span>
+                                        <span class="model">Outback</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>MANUALNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">115.000 zł</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel4.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Nissan</span>
+                                        <span class="model">Leaf</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>MANUALNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">225.000 zł</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel5.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Kia</span>
+                                        <span class="model">Sportage</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>MANUALNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">95.000 zł</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <div class="bg lazy" data-bg="img/home/carousel6.png"></div>
+                        </a>
+                        <div class="content">
+                            <div>
+                                <a href="#">
+                                    <div class="name">
+                                        <span class="mark">Isuzu</span>
+                                        <span class="model">D-Max</span>
+                                    </div>
+                                </a>
+                                <div class="attributes row">
+                                    <span>2021</span>
+                                    <span>MANUALNA</span>
+                                    <span>BENZYNA</span>
+                                </div>
+                            </div>
+                            <div class="price">125.000 zł</div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="button-wrapper">
+                <a href="#" class="button mt-5">Wszystkie oferty</a>
+                <div class="shadow"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-description-wrapper">
+            <a href="#"><img src="img/layout/logo.svg" alt="" class="logo"></a>
+            <div class="footer-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed orci eget dui semper vulputate.
+                    Duis laoreet urna ex, eget laoreet augue feugiat non odio.</p>
+            </div>
+        </div>
+
+        <div class="footer-links-column">
+            <div class="footer-block">
+                <h4 class="footer-block-title">Szybki kontakt</h4>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="tel:+48 91 466 87 00" class="footer-link">+48 91 466 87 00</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="mailto:kontakt@polmotor.pl" class="footer-link">kontakt@polmotor.pl</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4 class="footer-block-title">Ważne informacje</h4>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Polityka prywatności RODO</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Pliki cookies</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4 class="footer-block-title">Nawigacja</h4>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Dostępne samochody</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Serwis</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Finansowanie</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Ubezpieczenia</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Kariera</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="social-media-wrapper">
+            <a href="#">
+                <div class="icon-wrapper">
+                    <img src="img/layout/linkedin.svg" height="25px" width="auto" alt="" class="icon">
+                </div>
+            </a>
+        </div>
+
+        <div class="copyrights">
+            <span>Copyright © 2021 by Polmotor</span>
+            <span>Created with love by <a target="_blank" href="https://agencjamedialna.pro/">Ad Awards</a></span>
+        </div>
+
+        <a href="#"><img src="img/layout/logo.svg" alt="" class="big-logo"></a>
+        <div class="trust">Kieruj się zaufaniem</div>
+    </footer>
+
+    <script type="module" src="js/layout-scripts/availableCars.js"></script>
+
+
+
+
+</body>
+
+</html>

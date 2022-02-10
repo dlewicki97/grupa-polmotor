@@ -1,0 +1,48 @@
+.ckb {
+  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  cursor: pointer;
+  width: fit-content;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    &:checked ~ .checkmark {
+      background-color: var(--first);
+    }
+
+    &:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+
+  .checkmark:after {
+    left: 10px;
+    top: 3px;
+    width: 7px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.checkmark {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 7px;
+  border: 1px solid #e2e8ee;
+  margin-right: 15px;
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}

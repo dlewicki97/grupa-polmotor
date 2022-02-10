@@ -1,0 +1,12 @@
+@import "../../helpers/helpers";
+@import "../../components/banner/banner";
+@import "../../components/button/button";
+@import "../../components/title-section/title-section";
+@import "../available_cars/filters";
+@import "used-cars";
+@import "../../components/pagination/pagination";
+@import "cars";
+
+.pagination {
+  padding-top: 3rem;
+}

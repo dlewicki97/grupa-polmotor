@@ -1,0 +1,39 @@
+.carousel-arrow-container {
+  border-radius: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  transition: 0.2s background-color, 0.2s opacity;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  user-select: none;
+  cursor: pointer;
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &.left {
+    transform: rotate(-180deg) translate(100%, 50%);
+    left: 4rem;
+  }
+  &.right {
+    right: 0;
+  }
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+  &:hover .carousel-arrow {
+    transform: translateX(2px);
+  }
+  .carousel-arrow {
+    transition: 0.2s transform;
+  }
+}

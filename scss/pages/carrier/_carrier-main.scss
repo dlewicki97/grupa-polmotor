@@ -1,0 +1,34 @@
+.carrier-main {
+  @include padding-container-y;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10rem;
+
+  @media (max-width: 768px), (min-width: 992px) and (max-width: 1300px) {
+    padding-bottom: 0;
+  }
+
+  &-content {
+    @include padding-container-x;
+    @include padding-container-y;
+    padding-top: 0;
+  }
+
+  &-content,
+  &-photo-container {
+    width: 50%;
+    @media (max-width: 768px), (min-width: 992px) and (max-width: 1300px) {
+      width: 100%;
+    }
+  }
+
+  &-photo-container {
+    @media (max-width: 768px), (min-width: 992px) and (max-width: 1300px) {
+      height: 400px;
+      order: -1;
+      margin-bottom: 1rem;
+      @include padding-container-x;
+    }
+  }
+}

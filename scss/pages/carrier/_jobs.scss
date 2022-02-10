@@ -1,0 +1,56 @@
+.jobs {
+  @include padding-container-x;
+  @include padding-container-y;
+
+  .title-section-title {
+    color: black;
+  }
+
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px), (min-width: 992px) and (max-width: 1300px) {
+      margin-right: -1.5rem;
+      margin-left: -1.5rem;
+    }
+  }
+
+  .job {
+    padding: 1.5rem;
+    width: 33.3333%;
+
+    $wrapperPaddingY: 2.5rem;
+    @media (max-width: 1300px) {
+      width: 100%;
+    }
+    &-wrapper {
+      background-color: #f1f1f1;
+
+      padding: $wrapperPaddingY 2rem;
+    }
+    &-icon {
+      height: 70px;
+      margin: auto;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    &-subtitle {
+      color: $first;
+      text-align: center;
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    &-title {
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .button-wrapper {
+      transform: translateY(calc(50% + #{$wrapperPaddingY}));
+      margin: auto;
+    }
+  }
+}

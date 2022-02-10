@@ -1,0 +1,105 @@
+.offer {
+  @include padding-container-x;
+  @include padding-container-y;
+  overflow: hidden;
+  @mixin no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  }
+  & > .title-section .row {
+    @media (max-width: 1441px) {
+      flex-direction: column;
+      align-items: flex-start !important;
+    }
+  }
+  .carousel-arrow-container {
+    border-radius: 100%;
+    border: 1px solid #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    $radius: 55px;
+    width: $radius;
+    height: $radius;
+    margin-right: 0.7rem;
+    touch-action: manipulation;
+    @include no-select;
+
+    cursor: pointer;
+    .carousel-arrow {
+      height: 14px;
+      width: auto;
+      transition: transform 0.2s;
+      @include no-select;
+      pointer-events: none;
+      -webkit-touch-callout: none;
+      &.left {
+        transform: rotate(180deg);
+      }
+    }
+    &:hover {
+      background-color: #f1f1f1;
+      .carousel-arrow.right {
+        transform: translateX(2px);
+      }
+      .carousel-arrow.left {
+        transform: translateX(-2px) rotate(180deg);
+      }
+    }
+  }
+  .carousel {
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    max-width: 100%;
+    padding-top: 3rem;
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+    &-content {
+      display: inline-flex;
+      .item {
+        width: 200px;
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+        .bg {
+          height: 120px;
+        }
+        .content {
+          padding: 0.4rem;
+          border: 1px solid #f1f1f1;
+          height: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .name {
+            font-size: 1.2rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            .model {
+              font-weight: 600;
+            }
+          }
+          .attributes {
+            padding-bottom: 0.5rem;
+            span {
+              padding-right: 0.5rem;
+              font-size: 0.7rem;
+            }
+          }
+          .price {
+            font-weight: 600;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

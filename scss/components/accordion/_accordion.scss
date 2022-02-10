@@ -1,0 +1,52 @@
+.accordion {
+  margin-bottom: 1.5rem;
+  &-trigger {
+    @include margin-container-x;
+    background-color: #87888c4a;
+    color: $first;
+    width: 50%;
+    padding: 0.8rem 1.3rem;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    img {
+      transition: transform 0.2s;
+    }
+    @media (max-width: 500px) {
+      width: calc(100% - 2rem);
+    }
+  }
+  &.active &-trigger,
+  &-trigger:hover {
+    background-color: $first;
+    color: white;
+    img {
+      transform: rotate(90deg);
+      filter: brightness(220);
+    }
+  }
+  &.active &-content {
+    pointer-events: unset;
+    opacity: 1;
+    visibility: unset;
+  }
+  &-content {
+    transition: height 0.2s, opacity 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    background-color: #f4f7fa;
+    @include padding-container-x;
+    @include padding-container-y;
+  }
+  &:not(.active) {
+    .accordion-content {
+      padding: 0;
+    }
+    .accordion-content * {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import "../helpers/helpers";
+@import "available_cars_layout-nav";
+@import "aside";
+@import "available_cars_footer";
+@import "../components/title-section/title-section";
+@include d-flex;
+@include aic;
+@include jcsb;
+@include w-100;
+body {
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #014288;
+  border-radius: 7px;
+}
+
+main {
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "General Sans";
+}
+
+a {
+  text-decoration: none;
+  transition: 0.2s;
+  color: #000000;
+  &:hover {
+    color: $first;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}

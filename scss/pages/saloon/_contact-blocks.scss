@@ -1,0 +1,58 @@
+.contact-blocks {
+  @include padding-container-x;
+  @include padding-container-y;
+  padding-top: 0 !important;
+  $blockPadding: 1.5rem;
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    @media (min-width: 1400px) {
+      margin-left: -$blockPadding;
+      margin-right: -$blockPadding;
+    }
+  }
+  .contact-block {
+    width: 33.3333%;
+    padding: 2rem $blockPadding;
+    @media (min-width: 1400px) {
+      &:nth-child(-n + 3) {
+        padding-top: 0;
+      }
+      &:nth-last-child(-n + 3) {
+        padding-bottom: 0;
+      }
+    }
+    @media (max-width: 1400px) {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &-wrapper {
+      background-color: #f4f7fa;
+      padding: 3rem 2rem;
+      height: 100%;
+    }
+    &-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    &-address {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    &-link {
+      font-weight: 700;
+      color: black;
+      @media (min-width: 1400px) {
+        font-size: clamp(1.3rem, 1.4vw, 1.9rem);
+      }
+      @media (max-width: 1400px) {
+        font-size: clamp(1.2rem, 6vw, 1.9rem);
+      }
+    }
+  }
+}

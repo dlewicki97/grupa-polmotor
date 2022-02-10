@@ -1,0 +1,54 @@
+.car-description {
+  @include padding-container-x;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width: 992px) {
+    padding-bottom: 0;
+  }
+  &-title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  &-content {
+    width: 70%;
+    @media (min-width: 992px) {
+      padding-right: 10%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    @media (max-width: 992px) {
+      margin-bottom: 3rem;
+    }
+  }
+  &-contact {
+    width: 30%;
+    &-wrapper {
+      background-color: #f4f7fa;
+      padding: 3rem;
+    }
+    &-block {
+      margin-bottom: 3rem;
+    }
+    &-name {
+      color: $first;
+      font-weight: 500;
+      font-size: 1.3rem;
+    }
+    &-workplace,
+    &-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  }
+
+  &-content,
+  &-contact {
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+  }
+}

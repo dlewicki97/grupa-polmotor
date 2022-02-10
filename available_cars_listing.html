@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+
+    <title>Dostępne samochody - listing</title>
+    <link
+        href="https://api.fontshare.com/css?f[]=general-sans@200,201,300,301,400,401,500,501,600,601,700,701,1,2&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="min-css/available_cars_layout.min.css">
+    <link rel="stylesheet" href="min-css/available_cars_listing.min.css">
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="layout-nav">
+            <div class="logo-row">
+                <a class="logo-link" href="#">
+                    <img class="lazy logo" data-src="img/layout/logo.svg" alt="" width="180" height="auto">
+                </a>
+                <div id="collapse-button" class="layout-nav__hamburger-menu">
+                    <img data-src="img/layout/car.svg" alt="hamburger-menu" class="lazy hamburger-menu" width="25"
+                        height="25">
+                </div>
+            </div>
+            <div class="layout-nav__collapse">
+                <ul class="layout-nav__list">
+                    <li class="layout-nav__list-item">
+                        <a href="#" class="layout-nav__list-item-link"><img data-src="img/layout/nissan.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/kia.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/subaru.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/renault.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/dacia.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/isuzu.svg" alt=""
+                                class="lazy"></a>
+                    </li>
+                    <li class="layout-nav__list-item">
+                        <a href="" class="layout-nav__list-item-link"><img data-src="img/layout/super-pewniak.svg"
+                                alt="" class="lazy"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="filters">
+            <form action="" class="form">
+                <div class="filters-radios">
+                    <label class="custom-radio">
+                        <input type="radio" name="radio">
+                        <div class="checkmark"></div>
+                        NOWE
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="radio">
+                        <div class="checkmark"></div>
+                        UŻYWANE
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="radio" checked>
+                        <div class="checkmark"></div>
+                        WSZYSTKIE
+                    </label>
+                </div>
+                <div class="filters-inputs">
+                    <div class="filters-inputs-col col-12 col-xl-6">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">KATEGORIA</label>
+                            <div class="custom-select">
+                                <select class="form-control">
+                                    <option disabled>wybierz</option>
+                                    <option value="osobowe"><span>osobowe</span></option>
+                                    <option value="transportowe"><span>transportowe</span></option>
+                                </select>
+                                <div class="arrow lazy" data-bg="img/layout/button-arrow.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">RODZAJ PALIWA</label>
+                            <div class="custom-select">
+                                <select class="form-control">
+                                    <option disabled>wybierz</option>
+                                    <option value="benzyna"><span>benzyna</span></option>
+                                    <option value="diesel"><span>diesel</span></option>
+                                </select>
+                                <div class="arrow lazy" data-bg="img/layout/button-arrow.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">MARKA</label>
+                            <div class="custom-select">
+                                <select class="form-control">
+                                    <option disabled selected>wybierz markę</option>
+                                    <option value="OPEL"><span>OPEL</span></option>
+                                    <option value="TOYOTA"><span>TOYOTA</span></option>
+                                </select>
+                                <div class="arrow lazy" data-bg="img/layout/button-arrow.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">MODEL</label>
+                            <div class="custom-select">
+                                <select class="form-control">
+                                    <option disabled selected>wybierz model</option>
+                                    <option value="ASTRA"><span>ASTRA</span></option>
+                                    <option value="CORSA"><span>CORSA</span></option>
+                                </select>
+                                <div class="arrow lazy" data-bg="img/layout/button-arrow.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filters-inputs-col col-12 col-xl-6">
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">PRZEBIEG OD</label>
+                            <input type="text" placeholder="km" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">PRZEBIEG DO</label>
+                            <input type="text" placeholder="km" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">ROCZNIK OD</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">ROCZNIK DO</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">LOKALIZACJA</label>
+                            <div class="custom-select">
+                                <select class="form-control">
+                                    <option disabled selected>wybierz</option>
+                                    <option value="LUBIN"><span>LUBIN</span></option>
+                                    <option value="LEGNICA"><span>LEGNICA</span></option>
+                                </select>
+                                <div class="arrow lazy" data-bg="img/layout/button-arrow.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">CENA OD</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label class="form-label">CENA DO</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <button class="button form-submit" type="submit">Wyszukaj</button>
+                    <div class="shadow"></div>
+                </div>
+            </form>
+
+        </section>
+
+        <section class="used-cars">
+
+            <div class="title-section">
+                <div class="title-section-subtitle">Lorem ipsum dolor</div>
+                <div class="title-section-title">Samochody
+                    używane</div>
+            </div>
+
+            <div class="title-section-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo arcu, fringilla a porttitor non,
+                    porttitor in dui.
+                    Nam mattis, lorem a bibendum congue, est mi blandit ante, eget ornare nulla erat vitae orci.
+                    Suspendisse ut porta mi.
+                    Maecenas consequat condimentum purus, eu maximus turpis porttitor sit amet. Fusce laoreet pharetra
+                    ex, ac tristique sem
+                    accumsan et. Sed faucibus in orci id duis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce justo arcu,
+                    fringilla a porttitor non, porttitor in dui. Nam mattis, lorem a bibendum congue, est mi blandit
+                    ante.</p>
+            </div>
+        </section>
+
+        <section class="pagination">
+            <a href="#" class="item arrow left">
+                <img class="lazy" data-src="img/layout/button-arrow.svg" alt="">
+            </a>
+            <a href="#" class="item">1</a>
+            <a href="#" class="item active">2</a>
+            <a href="#" class="item">...</a>
+            <a href="#" class="item arrow right">
+                <img class="lazy" data-src="img/layout/button-arrow.svg" alt="">
+            </a>
+        </section>
+
+        <section class="cars">
+            <div class="car">
+                <div class="car-photo-container">
+                    <div class="car-photo lazy bg" data-bg="img/available_cars_listing/car1.png"></div>
+                </div>
+                <div class="car-contents">
+                    <div class="car-parameters">
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">ROK PRODUKCJI</div>
+                            <div class="car-parameter-value">2021</div>
+                        </div>
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">NAPĘD</div>
+                            <div class="car-parameter-value">PRZEDNIE KOŁA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">SKRZYNIA BIEGÓW</div>
+                            <div class="car-parameter-value">AUTOMATYCZNA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">RODZAJ PALIWA</div>
+                            <div class="car-parameter-value">HYBRYDA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">POJEMNOŚĆ</div>
+                            <div class="car-parameter-value">1900 CM3</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">PRZEBIEG</div>
+                            <div class="car-parameter-value">4000 KM</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">LOKALIZACJA</div>
+                            <div class="car-parameter-value">SZCZECIN, STRUGA 71</div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="car-descs">
+                        <div class="car-name-price">
+                            <div class="car-labels">
+                                <div class="car-label">NOWY</div>
+                            </div>
+                            <div class="car-name">Renault Arkana </div>
+                            <div class="car-price">103 200 zł</div>
+                            <div class="car-price-type">BRUTTO</div>
+                        </div>
+                        <div class="car-button button-wrapper">
+                            <button class="button form-submit" type="submit">Szczegóły</button>
+                            <div class="shadow"></div>
+                        </div>
+                    </div>
+                    <div class="car-button mobile button-wrapper">
+                        <button class="button form-submit" type="submit">Szczegóły</button>
+                        <div class="shadow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="car">
+                <div class="car-photo-container">
+                    <div class="car-photo lazy bg" data-bg="img/available_cars_listing/car2.png"></div>
+                </div>
+                <div class="car-contents">
+                    <div class="car-parameters">
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">ROK PRODUKCJI</div>
+                            <div class="car-parameter-value">2021</div>
+                        </div>
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">NAPĘD</div>
+                            <div class="car-parameter-value">PRZEDNIE KOŁA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">SKRZYNIA BIEGÓW</div>
+                            <div class="car-parameter-value">AUTOMATYCZNA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">RODZAJ PALIWA</div>
+                            <div class="car-parameter-value">HYBRYDA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">POJEMNOŚĆ</div>
+                            <div class="car-parameter-value">1900 CM3</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">PRZEBIEG</div>
+                            <div class="car-parameter-value">4000 KM</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">LOKALIZACJA</div>
+                            <div class="car-parameter-value">SZCZECIN, STRUGA 71</div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="car-descs">
+                        <div class="car-name-price">
+                            <div class="car-labels">
+                                <div class="car-label">NOWY</div>
+                            </div>
+                            <div class="car-name">Kia Sportage </div>
+                            <div class="car-price">133 200 zł</div>
+                            <div class="car-price-type">BRUTTO</div>
+                        </div>
+                        <div class="car-button button-wrapper">
+                            <button class="button form-submit" type="submit">Szczegóły</button>
+                            <div class="shadow"></div>
+                        </div>
+                    </div>
+                    <div class="car-button mobile button-wrapper">
+                        <button class="button form-submit" type="submit">Szczegóły</button>
+                        <div class="shadow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="car">
+                <div class="car-photo-container">
+                    <div class="car-photo lazy bg" data-bg="img/available_cars_listing/car1.png"></div>
+                </div>
+                <div class="car-contents">
+                    <div class="car-parameters">
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">ROK PRODUKCJI</div>
+                            <div class="car-parameter-value">2021</div>
+                        </div>
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">NAPĘD</div>
+                            <div class="car-parameter-value">PRZEDNIE KOŁA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">SKRZYNIA BIEGÓW</div>
+                            <div class="car-parameter-value">AUTOMATYCZNA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">RODZAJ PALIWA</div>
+                            <div class="car-parameter-value">HYBRYDA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">POJEMNOŚĆ</div>
+                            <div class="car-parameter-value">1900 CM3</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">PRZEBIEG</div>
+                            <div class="car-parameter-value">4000 KM</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">LOKALIZACJA</div>
+                            <div class="car-parameter-value">SZCZECIN, STRUGA 71</div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="car-descs">
+                        <div class="car-name-price">
+                            <div class="car-labels">
+                                <div class="car-label">NOWY</div>
+                            </div>
+                            <div class="car-name">Renault Arkana </div>
+                            <div class="car-price">103 200 zł</div>
+                            <div class="car-price-type">BRUTTO</div>
+                        </div>
+                        <div class="car-button button-wrapper">
+                            <button class="button form-submit" type="submit">Szczegóły</button>
+                            <div class="shadow"></div>
+                        </div>
+                    </div>
+                    <div class="car-button mobile button-wrapper">
+                        <button class="button form-submit" type="submit">Szczegóły</button>
+                        <div class="shadow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="car">
+                <div class="car-photo-container">
+                    <div class="car-photo lazy bg" data-bg="img/available_cars_listing/car2.png"></div>
+                </div>
+                <div class="car-contents">
+                    <div class="car-parameters">
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">ROK PRODUKCJI</div>
+                            <div class="car-parameter-value">2021</div>
+                        </div>
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">NAPĘD</div>
+                            <div class="car-parameter-value">PRZEDNIE KOŁA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">SKRZYNIA BIEGÓW</div>
+                            <div class="car-parameter-value">AUTOMATYCZNA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">RODZAJ PALIWA</div>
+                            <div class="car-parameter-value">HYBRYDA</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">POJEMNOŚĆ</div>
+                            <div class="car-parameter-value">1900 CM3</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">PRZEBIEG</div>
+                            <div class="car-parameter-value">4000 KM</div>
+                        </div>
+
+                        <div class="car-parameter">
+                            <div class="car-parameter-key">LOKALIZACJA</div>
+                            <div class="car-parameter-value">SZCZECIN, STRUGA 71</div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="car-descs">
+                        <div class="car-name-price">
+                            <div class="car-labels">
+                                <div class="car-label">NOWY</div>
+                            </div>
+                            <div class="car-name">Nissan Qashqai </div>
+                            <div class="car-price">133 200 zł</div>
+                            <div class="car-price-type">BRUTTO</div>
+                        </div>
+                        <div class="car-button button-wrapper">
+                            <button class="button form-submit" type="submit">Szczegóły</button>
+                            <div class="shadow"></div>
+                        </div>
+                    </div>
+                    <div class="car-button mobile button-wrapper">
+                        <button class="button form-submit" type="submit">Szczegóły</button>
+                        <div class="shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-description-wrapper">
+            <a href="#"><img src="img/layout/logo.svg" alt="" class="logo"></a>
+            <div class="footer-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed orci eget dui semper vulputate.
+                    Duis laoreet urna ex, eget laoreet augue feugiat non odio.</p>
+            </div>
+        </div>
+
+        <div class="footer-links-column">
+            <div class="footer-block">
+                <h4 class="footer-block-title">Szybki kontakt</h4>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="tel:+48 91 466 87 00" class="footer-link">+48 91 466 87 00</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="mailto:kontakt@polmotor.pl" class="footer-link">kontakt@polmotor.pl</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4 class="footer-block-title">Ważne informacje</h4>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Polityka prywatności RODO</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Pliki cookies</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4 class="footer-block-title">Nawigacja</h4>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Dostępne samochody</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Serwis</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Finansowanie</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Ubezpieczenia</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Kariera</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="social-media-wrapper">
+            <a href="#">
+                <div class="icon-wrapper">
+                    <img src="img/layout/linkedin.svg" height="25px" width="auto" alt="" class="icon">
+                </div>
+            </a>
+        </div>
+
+        <div class="copyrights">
+            <span>Copyright © 2021 by Polmotor</span>
+            <span>Created with love by <a target="_blank" href="https://agencjamedialna.pro/">Ad Awards</a></span>
+        </div>
+
+        <a href="#"><img src="img/layout/logo.svg" alt="" class="big-logo"></a>
+        <div class="trust">Kieruj się zaufaniem</div>
+    </footer>
+    <script type="module" src="js/layout-scripts/availableCarsListing.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+.history {
+  @include padding-container-x;
+  @include padding-container-y;
+  padding-right: 0;
+
+  $descWidth: 55%;
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  &-description {
+    width: clamp(50%, 35vw, 100%);
+    position: relative;
+    z-index: 1;
+  }
+  &-description,
+  &-photo-container {
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+  }
+  &-photo {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: 500px;
+    @media (max-width: 992px) {
+      position: static;
+      transform: unset;
+      margin-top: 5rem;
+      width: 100%;
+      height: auto;
+    }
+  }
+  @import "history-carousel";
+}

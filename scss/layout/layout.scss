@@ -1,0 +1,73 @@
+@import "../helpers/helpers";
+@import "layout-nav";
+@import "aside";
+@import "footer";
+@import "../components/title-section/title-section";
+@include d-flex;
+@include aic;
+@include jcsb;
+@include w-100;
+body {
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .aside-button {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #014288;
+  border-radius: 7px;
+}
+
+main {
+  width: calc(100vw - 350px);
+  background-color: #fff;
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "General Sans";
+}
+
+a {
+  text-decoration: none;
+  transition: 0.2s;
+  color: #000000;
+  &:hover {
+    color: $first;
+  }
+}
+
+.app {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: flex-end;
+  @media (max-width: 992px) {
+    margin-bottom: 0 !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}

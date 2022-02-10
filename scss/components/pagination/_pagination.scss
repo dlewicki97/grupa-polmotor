@@ -1,0 +1,47 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 3rem;
+  @include padding-container-x;
+  .item {
+    $dim: 60px;
+    width: $dim;
+    height: $dim;
+    color: $first;
+    background-color: #fff;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+    &.active,
+    &:hover {
+      color: white;
+      background-color: $first;
+      img {
+        filter: brightness(1200);
+      }
+    }
+    &.arrow {
+      border-radius: 100%;
+      border: 1px solid #f1f1f1;
+      img {
+        transition: transform 0.2s;
+      }
+      &:hover {
+        background-color: #f1f1f1 !important;
+        img {
+          filter: none;
+          transform: translateX(3px);
+        }
+      }
+      &.left {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.breadcrumb {
+  @include padding-container-x;
+  padding-top: 2rem;
+  font-size: 0.85rem;
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    .back {
+      margin-bottom: 3rem;
+    }
+    span {
+      display: none;
+    }
+  }
+  .back {
+    color: $first;
+    display: inline-block;
+    padding-right: 5rem;
+  }
+  &-item {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateY(calc(100% + 0.3rem)) skew(-45deg);
+      display: block;
+      width: 0%;
+      height: 3px;
+      background-color: $first;
+      transition: width 0.2s;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

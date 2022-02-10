@@ -1,0 +1,104 @@
+header {
+  background-color: #fff;
+  .layout-nav {
+    z-index: 100;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+
+    justify-content: space-between;
+    @include padding-container-x;
+    width: 100%;
+    @media (max-width: 992px) {
+      background-color: $second;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      flex-direction: column;
+    }
+    .logo-row {
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 992px) {
+        align-items: center;
+        width: 100%;
+      }
+      .logo-link {
+        height: fit-content;
+        padding-right: 1rem;
+        @media (max-width: 992px) {
+          display: flex;
+          align-items: center;
+        }
+        .logo {
+          height: 25px;
+          width: auto;
+        }
+      }
+    }
+
+    &__list {
+      margin: 0;
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__list-item {
+      margin: 0rem 0.8rem;
+      font-size: 1.25rem;
+      font-weight: 400;
+      @media (max-width: 1100px) {
+        margin: 0 0.5rem;
+      }
+    }
+    &__list-item-link {
+      position: relative;
+      transition: 0.2s color;
+      img {
+        height: 14px;
+        width: auto;
+        @media (max-width: 1440px) {
+          width: 100%;
+        }
+      }
+      &:hover,
+      &.active {
+        color: $first;
+      }
+    }
+    &__hamburger-menu {
+      display: none;
+      text-align: right;
+      cursor: pointer;
+    }
+    &__collapse {
+      transition: 0.2s opacity, 0.2s height, 0.2s padding-bottom;
+      justify-self: right;
+    }
+    @media (max-width: 992px) {
+      &__hamburger-menu {
+        display: flex;
+      }
+      &__collapse {
+        opacity: 0;
+        pointer-events: none;
+        width: 100%;
+        height: 0;
+        &.active {
+          opacity: 1;
+          pointer-events: unset;
+          height: unset;
+          padding-bottom: 2rem;
+          padding-top: 2rem;
+        }
+      }
+      &__list {
+        display: block;
+      }
+    }
+    &__logo img {
+      height: 50px;
+      width: auto;
+    }
+  }
+}

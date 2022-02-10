@@ -1,0 +1,46 @@
+.call-center {
+  @include padding-container-x;
+  @include padding-container-y;
+  padding-bottom: 0 !important;
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &-hours,
+  &-phone {
+    color: black;
+  }
+  &-phone {
+    font-size: clamp(1.5rem, 2.9vw, 3.5rem);
+    @media (max-width: 1500px) {
+      font-size: clamp(1.8rem, 9vw, 3.5rem);
+    }
+  }
+  &-contact,
+  &-title-section {
+    width: 50%;
+    @media (max-width: 1500px) {
+      width: 100% !important;
+    }
+  }
+  &-contact {
+    background-color: #f4f7fa;
+    text-align: right;
+    padding: 5rem 2rem;
+    padding-left: 1rem !important;
+    width: 45%;
+    @media (max-width: 1500px) {
+      margin-bottom: 3rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 500px) {
+      padding: 2rem 1rem !important;
+    }
+  }
+
+  &-hours {
+    font-weight: 700;
+    font-size: 2.1rem;
+  }
+}

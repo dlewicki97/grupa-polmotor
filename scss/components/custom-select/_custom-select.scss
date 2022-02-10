@@ -1,0 +1,91 @@
+.custom-select {
+  position: relative;
+
+  &.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+    .select-selected {
+      border-color: gray;
+    }
+    .arrow {
+      filter: grayscale(1);
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 95%;
+    $dims: 17px;
+    width: $dims;
+    height: $dims;
+    z-index: 1;
+    transition: 0.2s transform;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  &.active {
+    .arrow {
+      transform: translateY(-50%) rotate(-90deg);
+    }
+  }
+  select {
+    display: none;
+  }
+}
+.select-selected {
+  &:hover,
+  &.select-arrow-active {
+    border-color: #70e570;
+  }
+}
+.select-items div,
+.select-selected {
+  color: var(--first);
+  font-weight: 300;
+  padding: 1rem 1rem;
+  border: 1px solid #e2e8ee;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s all;
+  position: relative;
+  background-color: #fff;
+  & > span {
+    transition: 0.2s all;
+    position: relative;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #000000;
+    font-weight: 500;
+  }
+}
+.select-items div {
+  border: unset;
+  border-bottom: 1px solid #e2e8ee;
+  &:hover {
+    font-weight: 500;
+  }
+  &:first-child {
+    // pointer-events: none;
+  }
+}
+
+.select-items {
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #e2e8ee;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 5px;
+}
+
+.select-hide {
+  display: none;
+}

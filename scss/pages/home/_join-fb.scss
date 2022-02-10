@@ -1,0 +1,159 @@
+@include aife;
+@include col-lg-9;
+@include col-lg-3;
+
+.join-fb {
+  border: 2rem solid #f4f7fa;
+  @include padding-container-x(2rem);
+  @include padding-container-y;
+  position: relative;
+  .right-column {
+    height: 50%;
+    @media (max-width: 1300px) {
+      height: unset;
+    }
+  }
+  .fb {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  @media (max-width: 992px) {
+    border: unset;
+  }
+
+  .gallery {
+    & > .main-photo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 700px;
+      width: 25%;
+      @media (max-width: 1300px) {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    & > .other-photos {
+      width: 75%;
+      @media (max-width: 1300px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .photo-container {
+    position: relative;
+    padding: 1rem;
+    overflow: hidden;
+
+    .bg-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &:hover {
+      .shadow {
+        opacity: 1;
+      }
+      .bg {
+        $scale: 0.1;
+        transform: scale(1 + $scale);
+        .logo-container {
+          transform: scale(1 - $scale);
+        }
+        &::before {
+          opacity: 0.3;
+        }
+      }
+    }
+    .shadow {
+      transition: opacity 0.2s;
+      opacity: 0;
+      background-color: $first;
+      clip-path: none;
+      width: calc(100% - 2rem);
+      height: calc(100% - 2rem);
+      transform: translate(0rem, 2rem);
+    }
+    .bg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+      transition: transform 0.2s;
+      a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .logo-container {
+        background-color: #fff;
+        $angle: 5%;
+        width: fit-content;
+        padding: 0.8rem clamp(0.6rem, 1vw, 2rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 1s;
+        clip-path: polygon(
+          $angle 0,
+          100% 0,
+          calc(100% - #{$angle}) 100%,
+          0% 100%
+        );
+        .logo {
+          height: 17px;
+          width: 100%;
+        }
+      }
+    }
+    &-0 {
+      height: 70%;
+    }
+    &-1 {
+      height: 100%;
+      width: 33.33%;
+    }
+    &-2 {
+      height: 70%;
+      width: 45%;
+    }
+    $fourthWidth: 29%;
+    $fifthWidth: 32%;
+    $sixthWidth: 100% - $fifthWidth - $fourthWidth - 5%;
+    &-3 {
+      height: 85%;
+      width: $fourthWidth;
+    }
+    &-4 {
+      height: 100%;
+      width: $fifthWidth;
+    }
+    &-5 {
+      height: 70%;
+      width: $sixthWidth;
+    }
+    @media (max-width: 1300px) {
+      height: 300px;
+      width: 100%;
+    }
+  }
+}

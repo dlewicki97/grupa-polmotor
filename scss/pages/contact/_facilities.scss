@@ -1,0 +1,100 @@
+.facilities {
+  &-container-title {
+    @include padding-container-x;
+    font-size: 3rem;
+    margin-top: 5rem;
+  }
+  &-container {
+    @include padding-container-x;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #f4f7fa;
+  }
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  &-block {
+    padding: 1rem;
+    padding-top: 0;
+    padding-bottom: 3rem;
+    width: 100%;
+    @media (min-width: 1300px) {
+      width: 33.3333%;
+      &:nth-last-child(-n + 3) {
+        padding-bottom: 0;
+      }
+    }
+    &-wrapper {
+      height: 100%;
+    }
+    &-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    &-photo {
+      height: 250px;
+    }
+  }
+
+  &-content {
+    background-color: #fff;
+    padding: 1.5rem;
+  }
+  &-link {
+    &:first-child {
+      margin-bottom: 1rem;
+    }
+    &,
+    a {
+      color: $first;
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+
+  &-logos {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.2rem;
+    margin-right: -0.2rem;
+    margin-top: 1rem;
+    align-items: flex-end;
+    @media (max-width: 500px), (min-width: 1300px) and (max-width: 1600px) {
+      height: unset !important;
+    }
+  }
+
+  &-logo-container {
+    padding: 0.2rem;
+    width: 33.3333%;
+    @media (max-width: 500px), (min-width: 1300px) and (max-width: 1600px) {
+      width: 50%;
+    }
+    @media (max-width: 300px) {
+      width: 100%;
+    }
+  }
+  &-logo-wrapper {
+    padding: 0.8rem 0;
+    background-color: #f1f1f1;
+    display: block;
+    &:hover {
+      background-color: $first;
+      img {
+        filter: invert(1);
+      }
+    }
+  }
+  &-logo {
+    display: block;
+    margin: auto;
+
+    height: 14px;
+    width: 61%;
+  }
+}

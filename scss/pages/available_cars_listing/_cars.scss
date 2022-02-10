@@ -1,0 +1,153 @@
+.cars {
+  @include padding-container-x;
+  @include padding-container-y;
+  padding-top: 0;
+  .car {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    $photoWidth: 20%;
+    border: 1px solid #f4f7fa;
+    margin-bottom: 2rem;
+
+    &:nth-child(odd) {
+      background-color: #f4f7fa;
+    }
+
+    &-photo-container {
+      width: $photoWidth;
+    }
+
+    &-contents {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100% - $photoWidth;
+      padding: 1rem 2rem;
+      @media (max-width: 992px) {
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+    @media (max-width: 1300px) {
+      &-photo-container,
+      &-contents {
+        width: 100%;
+      }
+
+      &-photo-container {
+        height: 400px;
+      }
+    }
+
+    &-parameters {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: column;
+      padding-left: 5rem;
+      @media (max-width: 1300px) {
+        padding-left: 0;
+      }
+      @media (max-width: 992px) {
+        align-items: unset;
+        margin-bottom: 4rem;
+        margin-top: 1rem;
+      }
+    }
+    &-descs {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      @media (max-width: 992px) {
+        align-items: unset;
+        order: -1;
+      }
+    }
+
+    &-parameter {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+      }
+      &:not(:last-child) {
+        margin-bottom: 0.8rem;
+      }
+
+      &-key {
+        text-align: right;
+        color: $first;
+        font-size: 0.9rem !important;
+        padding-right: 2.2rem;
+        @media (max-width: 992px) {
+          text-align: left;
+        }
+      }
+      &-key,
+      &-value {
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+    &-labels {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-label {
+      color: white;
+      background-color: black;
+      padding: 0.1rem 1rem;
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+    &-name {
+      color: black;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      @media (min-width: 992px) {
+        text-align: right;
+      }
+    }
+    &-name-price {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      @media (max-width: 992px) {
+        align-items: flex-start;
+      }
+    }
+    &-price {
+      color: $first;
+      font-weight: 700;
+      font-size: 2.2rem;
+      &-type {
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 0.9rem;
+      }
+    }
+    &-button {
+      &:not(.mobile) {
+        @media (max-width: 992px) {
+          display: none;
+        }
+      }
+      &.mobile {
+        @media (min-width: 992px) {
+          display: none;
+        }
+      }
+
+      .button {
+        padding-right: 4rem;
+        padding-left: 4rem;
+      }
+    }
+  }
+}

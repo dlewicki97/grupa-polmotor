@@ -1,0 +1,26 @@
+.details-carousel {
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  max-width: 100%;
+  padding-top: 2rem;
+
+  .carousel-content {
+    display: inline-flex;
+  }
+
+  .carousel-content .item {
+    padding-right: $caruselItemPadding;
+    padding-left: $caruselItemPadding;
+  }
+  .carousel-content .item {
+    width: 150px;
+
+    .carousel-photo {
+      height: 150px;
+    }
+  }
+  &::-webkit-scrollbar {
+    height: 0;
+  }
+}

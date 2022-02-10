@@ -1,0 +1,55 @@
+.used-cars {
+  * {
+    color: white;
+  }
+  .bg {
+    @include padding-container-x;
+    @include padding-container-y;
+    padding-bottom: 3rem;
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    align-items: stretch;
+  }
+  &-button-container {
+    width: 33.33%;
+
+    &:nth-child(3n) {
+      padding-left: 3rem;
+    }
+    &:nth-child(3n - 2) {
+      padding-right: 3rem;
+    }
+    @media (max-width: 576px) {
+      width: 100%;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      padding-bottom: 2rem;
+      text-align: center;
+    }
+  }
+  &-button {
+    font-size: 1.8rem;
+    padding: 1.5rem 0;
+    font-weight: 700;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: background 0.2s, justify-content 0.2s;
+    @media (max-width: 576px) {
+      justify-content: center;
+    }
+    &:hover {
+      background: #fff;
+      color: black;
+      mix-blend-mode: screen;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.single-blog {
+  @include padding-container-y;
+  @include padding-container-x;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+  z-index: 1;
+  &-back {
+    position: absolute;
+    top: 0;
+    transform: translateY(-3rem);
+    color: $first;
+    font-size: 0.8rem;
+  }
+
+  &-photo {
+    height: 600px;
+  }
+  &-title-section {
+    padding: 1.5rem;
+    background-color: #fff;
+    position: relative;
+    margin-top: -10rem;
+    z-index: 2;
+    width: 50%;
+    .title-section-title {
+      color: black;
+    }
+  }
+  &-description {
+    padding: 3rem clamp(0rem, 10vw, 15rem);
+    font-weight: 500;
+    line-height: 33px;
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
+  &-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    @media (min-width: 1300px) {
+      margin-right: -1.5rem;
+      margin-left: -1.5rem;
+    }
+  }
+  &-gallery-photo-container {
+    width: 33.3333%;
+    height: 300px;
+    padding: 1.5rem;
+    @media (max-width: 1300px) {
+      width: 100%;
+    }
+  }
+}

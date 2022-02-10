@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+
+    <title>Polmotor</title>
+    <link
+        href="https://api.fontshare.com/css?f[]=general-sans@200,201,300,301,400,401,500,501,600,601,700,701,1,2&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="min-css/layout.min.css">
+    <link rel="stylesheet" href="min-css/home.min.css">
+</head>
+
+<body>
+
+    <div class="app">
+        <aside>
+            <img class="lazy aside-button" height="33" width="auto" data-src="img/layout/backburger.svg" />
+            <a href="#">
+                <img class="lazy logo" data-src="img/layout/logo.svg" alt="" width="180" height="auto">
+            </a>
+
+            <ul class="subpages">
+                <li class="subpage active">
+                    <a href="#">Strona główna</a>
+                </li>
+                <li class="subpage">
+                    <a href="#">O nas</a>
+                </li>
+                <li class="subpage">
+                    <a href="#">Dostępne samochody</a>
+                </li>
+                <li class="subpage">
+                    <a href="#">Ubezpieczenia</a>
+                </li>
+                <li class="subpage">
+                    <a href="#">Serwis</a>
+                </li>
+                <li class="subpage">
+                    <a href="#">Kariera</a>
+                </li>
+                <li class="subpage">
+                    <a href="#">Praktyki</a>
+                </li>
+                <li class="subpage">
+                    <a href="#">Blog</a>
+                </li>
+                <li class="subpage">
+                    <a href="#">Aktualności</a>
+                </li>
+                <li class="subpage">
+                    <a href="#">Kontakt</a>
+                </li>
+            </ul>
+
+        </aside>
+
+        <main>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-description-wrapper">
+            <a href="#"><img src="img/layout/logo.svg" alt="" class="logo"></a>
+            <div class="footer-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed orci eget dui semper vulputate.
+                    Duis laoreet urna ex, eget laoreet augue feugiat non odio.</p>
+            </div>
+        </div>
+
+        <div class="footer-links-column">
+            <div class="footer-block">
+                <h4 class="footer-block-title">Szybki kontakt</h4>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="tel:+48 91 466 87 00" class="footer-link">+48 91 466 87 00</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="mailto:kontakt@polmotor.pl" class="footer-link">kontakt@polmotor.pl</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4 class="footer-block-title">Ważne informacje</h4>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Polityka prywatności RODO</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Pliki cookies</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4 class="footer-block-title">Nawigacja</h4>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Dostępne samochody</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Serwis</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Finansowanie</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Ubezpieczenia</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Kariera</a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-link">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="social-media-wrapper">
+            <a href="#">
+                <div class="icon-wrapper">
+                    <img src="img/layout/linkedin.svg" height="25px" width="auto" alt="" class="icon">
+                </div>
+            </a>
+        </div>
+
+        <div class="copyrights">
+            <span>Copyright © 2021 by Polmotor</span>
+            <span>Created with love by <a target="_blank" href="https://agencjamedialna.pro/">Ad Awards</a></span>
+        </div>
+
+        <a href="#"><img src="img/layout/logo.svg" alt="" class="big-logo"></a>
+        <div class="trust">Kieruj się zaufaniem</div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js"></script>
+
+    <script src="js/carousel/carousel.js"></script>
+    <script src="js/slider/slider.js"></script>
+    <script src="js/custom-select/customSelect.js"></script>
+    <script src="js/saloons/setSaloonsTitlesHeight.js"></script>
+    <script src="js/footer/setFooterTitlesHeight.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+
+            sliderInit({ containerClass: 'slider' });
+            sliderInit({ containerClass: 'sponsorship' });
+
+            carouselInit({ containerClass: 'offer' });
+        })
+    </script>
+    <script>
+        var lazyLoadInstance = new LazyLoad({
+            // Your custom settings go here
+        });
+        let collapseButton = document.querySelector('#collapse-button');
+
+        collapseButton.addEventListener('click', () => document.querySelector('.layout-nav__collapse').classList.toggle('active'))
+
+
+        let main = document.querySelector('main');
+        let aside = document.querySelector('aside');
+        let footer = document.querySelector('footer');
+        let app = document.querySelector('.app');
+        let footerHeight = footer.getBoundingClientRect().height;
+        let maxScrollHeight = 0;
+        let scrollYBreakpoint = 0;
+        setInitValues();
+        function setAppMarginBottom() {
+            app.style.marginBottom = footerHeight + "px";
+        }
+        function setFooterHeight() {
+            footerHeight = footer.getBoundingClientRect().height;
+        }
+        function setMaxScrollHeight() {
+            maxScrollHeight = app.scrollHeight - window.innerHeight;
+        }
+        function setScrollYBreakpoint() {
+            scrollYBreakpoint = maxScrollHeight - ((footerHeight));
+        }
+        function setInitValues() {
+            setFooterHeight();
+            setMaxScrollHeight();
+            setScrollYBreakpoint();
+            setAppMarginBottom();
+        }
+
+
+        function scrollEvent() {
+            setInitValues();
+            if (window.innerWidth <= 992) return;
+
+            if (window.scrollY >= maxScrollHeight) {
+
+                aside.style.position = 'absolute';
+                aside.style.bottom = 0;
+                aside.style.top = "unset";
+            } else {
+                aside.style.position = 'fixed';
+                aside.style.top = 0;
+                aside.style.bottom = "";
+
+            }
+        }
+
+        window.addEventListener('scroll', e => {
+            scrollEvent()
+
+        })
+
+        document.querySelectorAll('.aside-button').forEach(button => button.addEventListener('click', () => {
+            aside.classList.toggle('show');
+        }))
+    </script>
+
+    <script src="js/accordion/accordion.js"></script>
+</body>
+
+</html>

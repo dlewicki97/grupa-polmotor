@@ -1,0 +1,131 @@
+footer {
+  width: 100%;
+  background-color: #f4f7fa;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  $fontSize: clamp(0.9rem, 1.2vw, 1.1rem);
+  // overflow-y: auto;
+  // max-height: 100vh;
+  @media (max-width: 992px) {
+    position: relative;
+    // overflow-y: unset;
+    // max-height: unset;
+  }
+  @include padding-container-x;
+  @include padding-container-y;
+  .footer {
+    &-description-wrapper {
+      width: 35%;
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+      .logo {
+        height: 30px;
+      }
+    }
+    &-description p {
+      font-size: $fontSize;
+      line-height: 27px;
+    }
+    &-links-column {
+      display: flex;
+      width: 55%;
+      flex-wrap: wrap;
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+    }
+    &-block {
+      width: 33.33%;
+      padding: 0 1rem;
+      @media (min-width: 992px) {
+        &:nth-child(3n) {
+          padding-right: 0;
+        }
+        &:nth-child(3n - 2) {
+          padding-left: 0;
+        }
+      }
+      @media (max-width: 992px) {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+      }
+      &-title {
+        color: #014288;
+        font-weight: 400;
+        font-size: 1.7rem;
+      }
+    }
+    &-list {
+      padding-left: 0;
+      list-style-type: none;
+      &-item {
+        margin-bottom: 0.3rem;
+        font-size: $fontSize;
+      }
+    }
+    &-link {
+      color: black;
+      transition: color 0.2s;
+      &:hover {
+        color: $first;
+      }
+    }
+  }
+
+  .social-media-wrapper {
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #01428860;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    .icon-wrapper {
+      background-color: #fff;
+      $a: 60px;
+      width: $a;
+      height: $a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon {
+        height: $a * 0.5;
+      }
+    }
+  }
+
+  .copyrights {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $fontSize;
+    margin-bottom: 5rem;
+    @media (max-width: 400px) {
+      flex-wrap: wrap;
+      span {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .big-logo {
+    height: 130px;
+    @media (max-width: 1400px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .trust {
+    width: 100%;
+    font-weight: 500;
+    color: $first;
+    font-style: italic;
+    font-size: clamp(2rem, 8vw, 5rem);
+  }
+}

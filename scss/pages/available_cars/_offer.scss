@@ -1,0 +1,11 @@
+@include row;
+@include mt-5;
+@import "../home/offer";
+
+.offer {
+  .carousel {
+    @media (min-width: 1441px) {
+      padding-top: 1rem;
+    }
+  }
+}

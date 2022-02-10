@@ -1,0 +1,28 @@
+@mixin d-flex {
+  .d-flex {
+    display: flex !important;
+  }
+}
+
+@mixin aic {
+  .aic {
+    align-items: center !important;
+  }
+}
+
+@mixin aife {
+  .aife {
+    align-items: flex-end !important;
+  }
+}
+
+@mixin jcsb {
+  .jcsb {
+    justify-content: space-between !important;
+  }
+}
+@mixin jcfe {
+  .jcfe {
+    justify-content: flex-end !important;
+  }
+}

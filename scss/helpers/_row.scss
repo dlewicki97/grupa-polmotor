@@ -1,0 +1,6 @@
+@mixin row {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
